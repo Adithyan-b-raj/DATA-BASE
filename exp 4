@@ -1,0 +1,77 @@
+SQL> select salary from EMPLOYEE11 where salary=(select max(salary) from Employee11);
+
+    SALARY
+----------
+     48000
+
+SQL> select salary from EMPLOYEE11 where salary=(select min(salary) from Employee11);
+
+    SALARY
+----------
+     39000
+
+SQL> select sum(salary) from Employee11;
+
+SUM(SALARY)
+-----------
+      87000
+SQL> select avg(salary) from Employee11;
+
+AVG(SALARY)
+-----------
+      43500
+
+SQL> select count(Eno) from employee11;
+
+COUNT(ENO)
+----------
+         2
+
+SQL> select max(salary) from Employee11 where DESIGNATION='salesman';
+
+MAX(SALARY)
+-----------
+      48000
+
+SQL> select sum(salary) from Employee11 where DESIGNATION='salesman';
+
+SUM(SALARY)
+-----------
+      48000
+SQL> select AGE from EMPLOYEE11 where age=(select max(age) from EMPLOYEE11);
+
+       AGE
+----------
+        25
+SQL> select AGE from EMPLOYEE11 where age=(select min(age) from EMPLOYEE11);
+
+       AGE
+----------
+        21
+SQL> select * from EMPLOYEE11 order by Ename;
+
+ENO        ENAME                DESIGNATION          S        AGE     SALARY DATEOFJOI PNO                  CITY
+---------- -------------------- -------------------- - ---------- ---------- --------- -------------------- --------------------
+E1         Adithyan             salesman             m         21      48000 23-JUL-24 P1                   Haripad
+E3         Ajin                 staff                m         25      39000 23-JUL-16 P3                   mukathala
+
+SQL> select * from EMPLOYEE11 order by Ename desc;
+
+ENO        ENAME                DESIGNATION          S        AGE     SALARY DATEOFJOI PNO                  CITY
+---------- -------------------- -------------------- - ---------- ---------- --------- -------------------- --------------------
+E3         Ajin                 staff                m         25      39000 23-JUL-16 P3                   mukathala
+E1         Adithyan             salesman             m         21      48000 23-JUL-24 P1                   Haripad
+
+SQL> select Pno,count(Pno) from employee11 group by Pno;
+
+PNO                  COUNT(PNO)
+-------------------- ----------
+P1                            1
+P3                            1
+
+
+SQL> select sum(salary),max(salary),min(salary),avg(salary) from employee11 where Pno='P1' and salary>1000;
+
+SUM(SALARY) MAX(SALARY) MIN(SALARY) AVG(SALARY)
+----------- ----------- ----------- -----------
+      48000       48000       48000       48000
