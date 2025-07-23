@@ -94,6 +94,12 @@ SQL> Update EMPLOYEE11 set salary=salary*1.2 where salary>=40000 and salary<4500
 
 1 row updated.
 
+SQL> select Ename from EMPLOYEE11 where Ename like '__i%';
+
+ENAME
+--------------------
+Adithyan
+Ajin
 
 
 
