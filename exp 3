@@ -41,6 +41,14 @@ ENAME
 Ajay
 Ajin
 
+SQL> select * from EMPLOYEE11 where DATEOFJOIN>'20-JUNE-2016' and DATEOFJOIN<'01-JULY-2017';
+
+ENO        ENAME                DESIGNATION          S        AGE     SALARY DATEOFJOI PNO                  CITY
+---------- -------------------- -------------------- - ---------- ---------- --------- -------------------- --------------------
+E3         Ajin                 staff                m         21      39000 23-JUL-16 P3                   mukathala
+
+
+
 
 
 
