@@ -1,0 +1,47 @@
+SQL> select Ename from EMPLOYEE11;
+
+ENAME
+--------------------
+Adithyan
+Ajay
+Ajin
+
+SQL> select Ename from EMPLOYEE11 where DESIGNATION in('salesman','analyst');
+
+ENAME
+--------------------
+Adithyan
+Ajay
+
+SQL> select * from EMPLOYEE11 where DATEOFJOIN<'10-JANUARY-2020';
+
+ENO        ENAME                DESIGNATION          S        AGE     SALARY DATEOFJOI PNO                  CITY
+---------- -------------------- -------------------- - ---------- ---------- --------- -------------------- --------------------
+E3         Ajin                 staff                m         21      39000 23-JUL-16 P3                   mukathala
+
+SQL> select * from EMPLOYEE11 where Eno in('E2','E4','E6','E8');
+
+ENO        ENAME                DESIGNATION          S        AGE     SALARY DATEOFJOI PNO                  CITY
+---------- -------------------- -------------------- - ---------- ---------- --------- -------------------- --------------------
+E2         Ajay                 analyst              m         21      42000 23-JUL-24 P2                   punaloor
+
+
+SQL> select * from EMPLOYEE11;
+
+ENO        ENAME                DESIGNATION          S        AGE     SALARY DATEOFJOI PNO                  CITY
+---------- -------------------- -------------------- - ---------- ---------- --------- -------------------- --------------------
+E1         Adithyan             salesman             m         21      40000 23-JUL-24 P1                   Haripad
+E2         Ajay                 analyst              m         21      42000 23-JUL-24 P2                   punaloor
+E3         Ajin                 staff                m         21      39000 23-JUL-16 P3                   mukathala
+
+SQL> select Ename from EMPLOYEE11 e,PROJECT11 p where e.pno=p.pno and e.pno in('P2','P3','P4');
+
+ENAME
+--------------------
+Ajay
+Ajin
+
+
+
+
+
