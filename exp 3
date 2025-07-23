@@ -47,6 +47,55 @@ ENO        ENAME                DESIGNATION          S        AGE     SALARY DAT
 ---------- -------------------- -------------------- - ---------- ---------- --------- -------------------- --------------------
 E3         Ajin                 staff                m         21      39000 23-JUL-16 P3                   mukathala
 
+SQL> select DESIGNATION from EMPLOYEE11;
+
+DESIGNATION
+--------------------
+salesman
+analyst
+staff
+
+SQL> select ENAME from EMPLOYEE11 where Pno is null;
+
+ENAME
+--------------------
+Ajay
+
+SQL> select ENAME from EMPLOYEE11 where ENAME like '%y';
+
+ENAME
+--------------------
+Ajay
+
+SQL> select ENAME from EMPLOYEE11 where ENAME like 'A%n' and length(Ename)>=3;
+
+ENAME
+--------------------
+Adithyan
+Ajin
+
+SQL> select ENAME from EMPLOYEE11 where ENAME like '_d%';
+
+ENAME
+--------------------
+Adithyan
+
+SQL> select Ename from EMPLOYEE11 where salary<45000.00 and salary>40000.00;
+
+ENAME
+--------------------
+Ajay
+
+SQL> DELETE EMPLOYEE11 where Age>60;
+
+1 row deleted.
+
+SQL> Update EMPLOYEE11 set salary=salary*1.2 where salary>=40000 and salary<45000;
+
+1 row updated.
+
+
+
 
 
 
