@@ -1,0 +1,41 @@
+1.SELECT UPPER(ENAME) FROM EMPLOYEE11;
+
+UPPER(ENAME)
+--------------------
+ADITHYAN
+AJAY
+AJIN
+
+2.SELECT LOWER(ENAME) FROM EMPLOYEE11;
+
+LOWER(ENAME)
+--------------------
+adithyan
+ajay
+ajin
+
+3. SELECT INITCAP(ENAME) FROM EMPLOYEE11;
+
+INITCAP(ENAME)
+--------------------
+Adithyan
+Ajay
+Ajin
+
+4.SELECT ENAME, LENGTH(ENAME) FROM EMPLOYEE11;
+
+ENAME                LENGTH(ENAME)
+-------------------- -------------
+Adithyan                         8
+Ajay                             4
+Ajin                             4
+
+5.SELECT concat(ename,eno) as namewithno FROM EMPLOYEE11;
+
+NAMEWITHNO
+------------------------------
+AdithyanE1
+AjayE2
+AjinE3
+
+6.
