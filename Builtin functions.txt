@@ -1,0 +1,45 @@
+-- 1. Display the name of employees in upper case
+SELECT UPPER(ENAME) AS EMPLOYEE_NAME_UPPER FROM EMPLOYEE;
+
+-- 2. Display the name of employees in lower case
+SELECT LOWER(ENAME) AS EMPLOYEE_NAME_LOWER FROM EMPLOYEE;
+
+-- 3. Display the name of employees in proper case
+SELECT INITCAP(ENAME) AS EMPLOYEE_NAME_PROPER FROM EMPLOYEE;
+
+-- 4. Display the length of each employee name
+SELECT ENAME, LENGTH(ENAME) AS NAME_LENGTH FROM EMPLOYEE;
+
+-- 5. Concatenate employee name with employee number
+SELECT ENAME || EMPNO AS NAME_WITH_NO FROM EMPLOYEE;
+
+-- 6. Extract 3 characters starting from 2nd character from 'Oracle'
+SELECT SUBSTR('Oracle', 2, 3) AS EXTRACTED FROM DUAL;
+
+-- 7. Find first occurrence of 'a' in 'COMPUTER MAINTENANCE'
+SELECT INSTR('COMPUTER MAINTENANCE', 'a') AS POSITION FROM DUAL;
+
+-- 8. Replace every 'a' with 'b' in 'MATHEMATICS'
+SELECT REPLACE('MATHEMATICS', 'a', 'b') AS REPLACED FROM DUAL;
+
+-- 9. Display first 3 characters of city names in EMPLOYEE table
+SELECT SUBSTR(CITY, 1, 3) AS CITY_PREFIX FROM EMPLOYEE;
+
+-- 10. Display your age in days (example DOB: 2000-05-15)
+SELECT (SYSDATE - TO_DATE('2000-05-15', 'YYYY-MM-DD')) AS AGE_IN_DAYS FROM DUAL;
+
+-- 11. Display your age in months (example DOB: 2000-05-15)
+SELECT MONTHS_BETWEEN(SYSDATE, TO_DATE('2000-05-15', 'YYYY-MM-DD')) AS AGE_IN_MONTHS FROM DUAL;
+
+-- 12. Display the current date and time
+SELECT SYSDATE AS CURRENT_DATE_TIME FROM DUAL;
+
+-- 13. Display date 3 months before current date
+SELECT ADD_MONTHS(SYSDATE, -3) AS DATE_BEFORE FROM DUAL;
+
+-- 14. Display current date in format 'DATE-MONTH-YEAR'
+SELECT TO_CHAR(SYSDATE, 'DD-MONTH-YYYY') AS FORMATTED_DATE FROM DUAL;
+
+-- 15. Display formatted employee details
+SELECT 'Mr/Ms ' || ENAME || ' who is ' || AGE || ' years old is residing in ' || CITY AS EMP_DETAILS
+FROM EMPLOYEE;
