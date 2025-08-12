@@ -1,0 +1,46 @@
+1.select * from employee11 e left join project11 p on p.Pno=e.Pno;
+
+ENO        ENAME                DESIGNATION          S        AGE     SALARY DATEOFJOI PNO                  CITY                 PNO                  PNAME                    DEPTNO
+---------- -------------------- -------------------- - ---------- ---------- --------- -------------------- -------------------- -------------------- -------------------- ----------
+E1         Adithyan             staff                m         21      40000 23-JUL-24 P1                   Haripad              P1                   Project1                   1
+E2         Ajay                 staff                m         21      42000 23-JUL-24 P2                   punaloor             P2                   Project2                   2
+E3         Ajin                 staff                m         21      39000 23-JUL-16 P3                   mukathala            P3                   Project3                   3
+
+2.select * from employee11 e right join project11 p on p.Pno=e.Pno;
+
+ENO        ENAME                DESIGNATION          S        AGE     SALARY DATEOFJOI PNO                  CITY                 PNO                  PNAME                    DEPTNO
+---------- -------------------- -------------------- - ---------- ---------- --------- -------------------- -------------------- -------------------- -------------------- ----------
+E1         Adithyan             staff                m         21      40000 23-JUL-24 P1                   Haripad              P1                   Project1                   1
+E2         Ajay                 staff                m         21      42000 23-JUL-24 P2                   punaloor             P2                   Project2                   2
+E3         Ajin                 staff                m         21      39000 23-JUL-16 P3                   mukathala            P3                   Project3                   3
+
+3.select * from employee11 e full join project11 p on p.Pno=e.Pno;
+
+ENO        ENAME                DESIGNATION          S        AGE     SALARY DATEOFJOI PNO                  CITY                 PNO                  PNAME                    DEPTNO
+---------- -------------------- -------------------- - ---------- ---------- --------- -------------------- -------------------- -------------------- -------------------- ----------
+E1         Adithyan             staff                m         21      40000 23-JUL-24 P1                   Haripad              P1                   Project1                   1
+E2         Ajay                 staff                m         21      42000 23-JUL-24 P2                   punaloor             P2                   Project2                   2
+E3         Ajin                 staff                m         21      39000 23-JUL-16 P3                   mukathala            P3                   Project3                   3
+
+4.select * from employee11 natural join project11;
+
+PNO                  ENO        ENAME                DESIGNATION          S        AGE     SALARY DATEOFJOI CITY                 PNAME                    DEPTNO
+-------------------- ---------- -------------------- -------------------- - ---------- ---------- --------- -------------------- -------------------- ----------
+P1                   E1         Adithyan             staff                m         21      40000 23-JUL-24 Haripad              Project1                      1
+P2                   E2         Ajay                 staff                m         21      42000 23-JUL-24 punaloor             Project2                      2
+P3                   E3         Ajin                 staff                m         21      39000 23-JUL-16 mukathala            Project3                      3
+
+5.select Eno, Salary from employee11 where eno='E1' Union select eno, salary from employee11 where eno='E3';
+
+ENO            SALARY
+---------- ----------
+E1              40000
+E3              39000
+
+6.select salary from employee11 e join project11 p on e.Pno=p.Pno where p.Pno='P1' intersect select salary from employee11 e join project11 p on e.Pno=p.Pno where p.Pno='P2';
+
+no rows selected
+
+7.select designation from employee11 e join Project11 p ON e.pno=p.pno where p.pno='p3' minus select designation from employee11 e join Project11 p ON e.pno=p.pno where p.pno='p1';
+
+no rows selected
