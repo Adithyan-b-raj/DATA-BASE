@@ -1,0 +1,58 @@
+1.select count(pno) from employee11 where pno not in(select (pno) from employee11 where ename in('Ajay','Adithyan'));
+
+COUNT(PNO)
+----------
+         1
+
+2.SELECT COUNT(*) FROM EMPLOYEE11 WHERE SALARY > (SELECT AVG(SALARY) FROM EMPLOYEE11);
+
+  COUNT(*)
+----------
+         1
+
+3.SELECT * FROM PROJECT11 WHERE PNO = (SELECT PNO FROM EMPLOYEE11 WHERE SALARY = (SELECT MAX(SALARY) FROM EMPLOYEE11));
+
+PNO                  PNAME                    DEPTNO
+-------------------- -------------------- ----------
+P2                   Project2                      2
+
+4.select deptname from employee11,project11,dept11 where employee11.pno=project11.pno and project11.deptno=dept11.deptno and age=(select min(age) from employee11);
+
+DEPTNAME
+--------------------
+CSE
+IT
+EEE
+
+5.SELECT * FROM EMPLOYEE11 WHERE EXTRACT(MONTH FROM Dateofjoin) = 1;
+
+no rows selected
+
+6.SELECT TO_CHAR(Dateofjoin, 'Month') AS JOIN_MONTH, COUNT(*) AS EMP_COUNT FROM EMPLOYEE11 GROUP BY TO_CHAR(Dateofjoin, 'Month');
+
+JOIN_MONTH                            EMP_COUNT
+------------------------------------ ----------
+July                                          3
+
+7. UPDATE EMPLOYEE11 SET salary = 45000 WHERE EXTRACT(MONTH FROM Dateofjoin) = 7 AND SALARY > (SELECT AVG(SALARY) FROM EMPLOYEE11);
+
+1 row updated.
+
+8.UPDATE EMPLOYEE11 SET SALARY = SALARY * 1.10 WHERE Dateofjoin = (SELECT MIN(dateofjoin) FROM EMPLOYEE11);
+
+1 row updated.
+
+9.select * from employee11 where pno not in(select pno from Employee11 where ename='Ajay');
+
+ENO        ENAME                DESIGNATION          S        AGE     SALARY DATEOFJOI PNO                  CITY
+---------- -------------------- -------------------- - ---------- ---------- --------- -------------------- --------------------
+E1         Adithyan             staff                m         21      40000 23-JUL-24 P1                   Haripad
+E3         Ajin                 staff                m         21      42900 23-JUL-16 P3                   mukathala
+
+10.select * from employee11 where eno=(SELECT eno FROM EMPLOYEE11,PROJECT11,DEPT11 WHERE EMPLOYEE11.Pno=PROJECT11.pno and Project11.DEPTNO=DEPT11.DEPTNO and DEPTNAME = 'CSE') ORDER BY ENAME;
+
+ENO        ENAME                DESIGNATION          S        AGE     SALARY DATEOFJOI PNO                  CITY
+---------- -------------------- -------------------- - ---------- ---------- --------- -------------------- --------------------
+E1         Adithyan             staff                m         21      40000 23-JUL-24 P1                   Haripad
+
+
