@@ -38,4 +38,67 @@ AdithyanE1
 AjayE2
 AjinE3
 
-6.
+6.SELECT SUBSTR('Oracle', 2, 3) FROM DUAL;
+
+SUB
+---
+rac
+
+7.SELECT INSTR('COMPUTER MAINTENANCE', 'A') as POSITION FROM DUAL;
+
+  POSITION
+----------
+        11
+
+8.SELECT REPLACE('MATHEMATICS', 'A', 'B') AS REPLACED FROM DUAL;
+
+REPLACED
+-----------
+MBTHEMBTICS
+
+9.SELECT SUBSTR(CITY, 1, 3) AS CITY_PREFIX FROM EMPLOYEE11;
+
+CITY_PREFIX
+------------
+Har
+pun
+muk
+
+
+10.SELECT (SYSDATE - TO_DATE('2000-05-15', 'YYYY-MM-DD')) AS AGE_IN_DAYS FROM DUAL;
+
+AGE_IN_DAYS
+-----------
+ 9220.43123
+
+11.SELECT MONTHS_BETWEEN(SYSDATE, TO_DATE('2024-05-15', 'YYYY-MM-DD')) AS AGE_IN_MONTHS FROM DUAL;
+
+AGE_IN_MONTHS
+-------------
+     14.91717
+12.SELECT SYSDATE AS CURRENT_DATE_TIME FROM DUAL;
+
+CURRENT_D
+---------
+12-AUG-25
+
+13. SELECT ADD_MONTHS(SYSDATE, -3) AS DATE_BEFORE FROM DUAL;
+
+DATE_BEFO
+---------
+12-MAY-25
+
+14. SELECT TO_CHAR(SYSDATE, 'DD-MONTH-DAY') AS FORMATTED_DATE FROM DUAL;
+
+FORMATTED_DATE
+----------------------------------------------------------------------------
+12-AUGUST   -TUESDAY
+
+15. SELECT 'Mr/Ms ' || ENAME || ' who is ' || AGE || ' years old is residing in ' || CITY AS EMP_DETAILS from EMPLOYEE11;
+
+EMP_DETAILS
+--------------------------------------------------------------------------------
+Mr/Ms Adithyan who is 21 years old is residing in Haripad
+Mr/Ms Ajay who is 21 years old is residing in punaloor
+Mr/Ms Ajin who is 21 years old is residing in mukathala
+
