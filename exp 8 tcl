@@ -1,0 +1,17 @@
+1.create table class11(id INT, name VARCHAR(30));
+
+Table created.
+
+2.insert into class11 values(1,'adithyan');
+
+1 row created.
+insert into class11 values(2,'gokul');
+
+1 row created.
+commit;
+
+Commit complete.
+3.save pointA;
+Created file pointA.sql
+ save pointB;
+Created file pointB.sql
